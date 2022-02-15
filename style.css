@@ -1,0 +1,55 @@
+body {
+  background-color: salmon;
+}
+
+#container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
+.button {
+  color: rgba(0, 0, 0, .5);
+  font-size: 6rem;
+}
+
+#buttonCard {
+  opacity: 50%;
+  border: 1px dotted black;
+  transition: all .6s ease-in-out;
+}
+
+#buttonCard:hover {
+  cursor: pointer;
+}
+
+#buttonCard:active {
+  background-color: wheat;
+  transform: scale(0.6);
+}
+
+.card {
+  box-sizing: border-box;
+  height: 15rem;
+  width: 12rem;
+  border-radius: 5%;
+  background-color: cornsilk;
+  font-family: monospace;
+  padding: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: .5rem;
+}
+
+.title {
+  font-size: 1.75rem;
+}
+
+.cardContent {
+  opacity: 70%;
+}
