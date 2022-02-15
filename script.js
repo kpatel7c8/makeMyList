@@ -1,3 +1,17 @@
+const buttonCard = document.getElementById('buttonCard');
+const container = document.getElementById('container');
+
+const newCard = document.createElement('div');
+newCard.className = 'card'; 
+
+buttonCard.addEventListener('click', addCard);
+
+function addCard() {
+  //document.getElementById('title1').innerHTML = 'Gangs of New York';
+  container.append(newCard);
+  console.log('hiiooo');
+}
+
 const Othello = new Book('Othello', 'Shakespeare', 221, 'read');
 const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read yet');
 const myLib = document.getElementById('myLib');
