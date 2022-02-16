@@ -46,6 +46,24 @@ body {
   margin-top: .5rem;
 }
 
+.newCard {
+  box-sizing: border-box;
+  height: 15rem;
+  width: 12rem;
+  border-radius: 5%;
+  background-color: cornsilk;
+  font-family: monospace;
+  padding: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: .5rem;
+  opacity: 90%;
+  border: 3px dotted gray;
+}
+
 .title {
   font-size: 1.75rem;
 }

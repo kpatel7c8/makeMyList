@@ -7,11 +7,19 @@ function addCard() {
   const newTitle = document.createElement('div');
   const newDirector = document.createElement('div');
   const newYear = document.createElement('div');
+  const newCardActions = document.createElement('div');
+  const newEye = document.createElement('i');
+  const newCheck = document.createElement('i');
+  const newX = document.createElement('i');
 
-  newCard.className = 'card';
+  newCard.className = 'newCard';
   newTitle.className = 'title';
   newDirector.className = 'cardContent director';
   newYear.className = 'cardContent year';
+  newCardActions.className = 'cardActions';
+  newEye.className = 'fa-solid fa-eye';
+  newCheck.className = 'fa-solid fa-check fa-lg';
+  newX.className = 'fa-solid fa-x';
 
   newTitle.innerHTML = 'Title';
   newDirector.innerHTML = 'Director';
@@ -21,6 +29,10 @@ function addCard() {
   newCard.append(newTitle);
   newCard.append(newDirector);
   newCard.append(newYear);
+  newCard.append(newCardActions);
+  newCardActions.append(newEye);
+  newCardActions.append(newCheck);
+  newCardActions.append(newX);
 }
 
 
