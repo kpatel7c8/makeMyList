@@ -53,3 +53,41 @@ body {
 .cardContent {
   opacity: 70%;
 }
+
+.cardActions {
+  padding-top: 5%;
+  opacity: 50%;
+  display:inline-flex;
+  justify-content: space-around;
+  align-items: baseline;
+  margin-bottom: -5%;
+}
+
+.fa-eye {
+  opacity: 50%;
+}
+
+.fa-eye:hover {
+  opacity: 100%;
+  transform: scale(1.05);
+}
+
+.fa-check {
+  color: green;
+  opacity: 50%;
+}
+
+.fa-check:hover {
+  opacity: 100%;
+  transform: scale(1.05);
+}
+
+.fa-x {
+  color: red;
+  opacity: 50%;
+}
+
+.fa-x:hover {
+  opacity: 100%;
+  transform: scale(1.05);
+}
