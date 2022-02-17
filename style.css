@@ -85,19 +85,9 @@ body {
   opacity: 50%;
 }
 
-.fa-eye:hover {
-  opacity: 100%;
-  transform: scale(1.05);
-}
-
 .fa-check {
   color: green;
   opacity: 50%;
-}
-
-.fa-check:hover {
-  opacity: 100%;
-  transform: scale(1.05);
 }
 
 .fa-x {
@@ -105,7 +95,20 @@ body {
   opacity: 50%;
 }
 
-.fa-x:hover {
+.fa-eye:hover, .fa-check:hover, .fa-x:hover {
   opacity: 100%;
   transform: scale(1.05);
+  cursor: pointer;
+}
+
+input, textarea {
+  border: 2px dotted gray;
+  background-color: cornsilk;
+  font-family: monospace;
+  text-align: center;
+  border-radius: 5px;
+}
+
+textarea:nth-child(2), input {
+  font-size: 1.25rem;
 }
