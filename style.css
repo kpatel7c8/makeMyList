@@ -21,6 +21,25 @@ body {
   transition: all .6s ease-in-out;
 }
 
+.error {
+  box-sizing: border-box;
+  height: 15rem;
+  width: 12rem;
+  border-radius: 5%;
+  background-color: rgb(211, 12, 12);
+  font-family: monospace;
+  padding: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: .5rem;
+  opacity: 50%;
+  border: 1px dotted black;
+  transition: all .6s ease-in-out;
+}
+
 #buttonCard:hover {
   cursor: pointer;
 }
@@ -74,7 +93,6 @@ body {
 
 .cardActions {
   padding-top: 5%;
-  opacity: 50%;
   display:inline-flex;
   justify-content: space-around;
   align-items: baseline;
@@ -83,6 +101,13 @@ body {
 
 .fa-eye {
   opacity: 50%;
+  color: lightslategray;
+}
+
+.watched {
+  opacity: 100%;
+  scale: 1.1;
+  color: black;
 }
 
 .fa-check {
@@ -95,9 +120,9 @@ body {
   opacity: 50%;
 }
 
-.fa-eye:hover, .fa-check:hover, .fa-x:hover {
+.fa-eye:hover, .fa-check:hover, .fa-x:hover, .sampleEye {
   opacity: 100%;
-  transform: scale(1.05);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -111,4 +136,8 @@ input, textarea {
 
 textarea:nth-child(2), input {
   font-size: 1.25rem;
+}
+
+.fa-star {
+  color: gold;
 }

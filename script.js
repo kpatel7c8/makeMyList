@@ -1,100 +1,120 @@
-let myWatchlist = [];
-
 const container = document.getElementById('container');
 const buttonCard = document.getElementById('buttonCard');
-buttonCard.addEventListener('click', createCard);
+buttonCard.addEventListener('click', checkEmptyCard); 
 
-function createCard() {
+// array of movie objects
+let myWatchlist = [];
+
+// movie object constructor
+function Movie(title, director, Rating) {
+  this.title = title;
+  this.director = director;
+  this.Rating = Rating;
+}
+
+function checkEmptyCard() {
+  if (document.getElementsByClassName("newCard").length == 0) {
+    createCardForm();
+  }
+  else {
+    buttonCard.className = 'error';
+  }
+}
+
+
+function createCardForm() {  
   const newCard = document.createElement('div');
-  const newTitle = document.createElement('textarea');
-  const newDirector = document.createElement('textarea');
-  const newYear = document.createElement('input');
+  const newTitleInput = document.createElement('textarea');
+  const newDirectorInput = document.createElement('textarea');
+  const newRatingInput = document.createElement('input');
+  const newTitle = document.createElement('div');
+  const newDirector = document.createElement('div');
+  const newRating = document.createElement('div');
   const newCardActions = document.createElement('div');
   const newEye = document.createElement('i');
   const newCheck = document.createElement('i');
   const newX = document.createElement('i');
 
+  newEye.addEventListener('click', watched);
+  newCheck.addEventListener('click', addMovie);
+  newX.addEventListener('click', removeMovie);
+
   newCard.className = 'newCard';
+  newTitleInput.className = 'title';
+  newDirectorInput.className = 'cardContent director';
+  newRatingInput.className = 'cardContent Rating';
   newTitle.className = 'title';
   newDirector.className = 'cardContent director';
-  newYear.className = 'cardContent year';
+  newRating.className = 'cardContent Rating';
+  
+  newRatingInput.setAttribute('type','number');
+  newRatingInput.setAttribute('min', '1');
+  newRatingInput.setAttribute('max', '5');
+  
+  newTitleInput.id = 'title';
+  newDirectorInput.id = 'director';
+  newRatingInput.id = 'Rating';
+  newTitleInput.placeholder = 'Title';
+  newDirectorInput.placeholder = 'Director';
+  newRatingInput.placeholder = 'Rating';
+  newRatingInput.setAttribute("required","");
+  
   newCardActions.className = 'cardActions';
   newEye.className = 'fa-solid fa-eye';
   newCheck.className = 'fa-solid fa-check fa-lg';
   newX.className = 'fa-solid fa-x';
 
-  newTitle.id = 'title';
-  newDirector.id = 'director';
-  newYear.id = 'year';
-
   container.insertBefore(newCard, buttonCard);
-  newCard.append(newTitle);
-  newCard.append(newDirector);
-  newCard.append(newYear);
+  newCard.append(newTitleInput);
+  newCard.append(newDirectorInput);
+  newCard.append(newRatingInput);
   newCard.append(newCardActions);
   newCardActions.append(newEye);
   newCardActions.append(newCheck);
   newCardActions.append(newX);
 
-  newTitle.placeholder = 'Title';
-  newDirector.placeholder = 'Director';
-  newYear.placeholder = 'Year';
-
-  function Movie(title, director, year) {
-    this.title = title;
-    this.director = director;
-    this.year = year;
+  function watched() {
+    newEye.classList.toggle('watched');
   }
 
-  newCheck.addEventListener('click', addMovie);
+  function removeMovie() {
+    newCard.remove();
+    buttonCard.className = 'card';
+  }
+
   function addMovie() {
-    let newMovie = new Movie(document.getElementById('title').value, document.getElementById('director').value, document.getElementById('year').value);
-  /////////////////////////
-
-    myWatchlist.push(newMovie);
-    console.log(myWatchlist);
-    newCheck.removeEventListener('click',addMovie);
-    console.log(myWatchlist[0].title);
-
+    function checkEmptyTitle() {
+      if (document.getElementById('title').value == "") {
+        document.getElementById('title').style.borderStyle = "solid";
+        document.getElementById('title').style.borderColor = "red";
+      }
+      else {
+        document.getElementById('title').style.borderStyle = "dotted";
+        document.getElementById('title').style.borderColor = "gray";
+        let newMovie = new Movie(document.getElementById('title').value, document.getElementById('director').value, document.getElementById('Rating').value);
+        myWatchlist.push(newMovie);
+        newCheck.removeEventListener('click',addMovie);
+        finalizeCard();
+      }
+    }
+    checkEmptyTitle(); 
   }
 
-}
-
-//////////////////
-
-
-
-//////////////////////////////////////////////////////////////////////
-////  MAKE MOVIE OBJECTS FROM USER INPUT, STORE THEM IN AN ARRAY  ////
-//////////////////////////////////////////////////////////////////////
-
-
-const Othello = new Book('Othello', 'Shakespeare', 221, 'read');
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 295, 'not read yet');
-const myLib = document.getElementById('myLib');
-
-let myLibrary = [];
-myLibrary.push(Othello);
-myLibrary.push(theHobbit);
-
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-}
-
-function addBookToLibrary() {
-  while (prompt("Do you want to add a book?") == 'yes') {
-    let theTitle = prompt('What is the title of the book?');
-    let theAuthor = prompt('Who is the author of the book?');
-    let numberOfPages = prompt('How many pages are in the book?');
-    let readYet = prompt('Have you read the book?');
-    const newBook = new Book(theTitle, theAuthor, numberOfPages, readYet);
-    myLibrary.push(newBook);
+  function finalizeCard() {
+    newTitleInput.remove();
+    newDirectorInput.remove();
+    newRatingInput.remove();
+    newCardActions.remove();
+  
+    newTitle.innerHTML = myWatchlist[myWatchlist.length - 1].title;
+    newDirector.innerHTML = myWatchlist[myWatchlist.length - 1].director;
+    newRating.innerHTML = '<i class="fa-solid fa-star fa-lg"></i>'.repeat(myWatchlist[myWatchlist.length - 1].Rating);
+  
+    newCard.className = 'card';
+    newCard.append(newTitle);
+    newCard.append(newDirector);
+    newCard.append(newRating);
+    newCard.append(newCardActions);
+    buttonCard.className = 'card';
   }
-  return myLibrary;
 }
-
-//addBookToLibrary();
-//myLib.innerHTML = myLibrary[0].author;
