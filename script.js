@@ -91,6 +91,12 @@ function createCardForm() {
       else {
         document.getElementById('title').style.borderStyle = "dotted";
         document.getElementById('title').style.borderColor = "gray";
+        if(document.getElementById('Rating').value == '' || document.getElementById('Rating').value < 1) {
+          document.getElementById('Rating').value = 1;
+        }
+        else if(document.getElementById('Rating').value > 5) {
+          document.getElementById('Rating').value = 5;
+        }
         let newMovie = new Movie(document.getElementById('title').value, document.getElementById('director').value, document.getElementById('Rating').value);
         myWatchlist.push(newMovie);
         newCheck.removeEventListener('click',addMovie);
