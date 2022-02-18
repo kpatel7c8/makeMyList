@@ -1,13 +1,14 @@
 body {
-  background-color: salmon;
+  background-color: #e3fffb;
 }
 
 #container {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: 1rem;
+  gap: 2rem;
   justify-items: center;
+  margin: 2rem ;
 }
 
 .button {
@@ -19,6 +20,7 @@ body {
   opacity: 50%;
   border: 1px dotted black;
   transition: all .6s ease-in-out;
+  box-shadow: 10px 10px gray;
 }
 
 .error {
@@ -54,7 +56,8 @@ body {
   height: 15rem;
   width: 12rem;
   border-radius: 5%;
-  background-color: cornsilk;
+  color: #229c86;
+  background-color: #abe5f7;
   font-family: monospace;
   padding: 1rem;
   font-size: 1.25rem;
@@ -63,6 +66,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   margin-top: .5rem;
+  box-shadow: 10px 10px gray;
 }
 
 .newCard {
@@ -70,7 +74,8 @@ body {
   height: 15rem;
   width: 12rem;
   border-radius: 5%;
-  background-color: cornsilk;
+  color: #229c86;
+  background-color: #abe5f7;
   font-family: monospace;
   padding: 1rem;
   font-size: 1.25rem;
@@ -81,6 +86,10 @@ body {
   margin-top: .5rem;
   opacity: 90%;
   border: 3px dotted gray;
+  box-shadow: 25px 30px gray;
+  position: relative;
+  top: -30px;
+  left: -10px;
 }
 
 .title {
@@ -128,7 +137,7 @@ body {
 
 input, textarea {
   border: 2px dotted gray;
-  background-color: cornsilk;
+  background-color: #abe5f7;
   font-family: monospace;
   text-align: center;
   border-radius: 5px;
@@ -140,4 +149,5 @@ textarea:nth-child(2), input {
 
 .fa-star {
   color: gold;
+  text-shadow: 3px 3px red;
 }
