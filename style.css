@@ -11,6 +11,53 @@ body {
   margin: 2rem ;
 }
 
+#ribbonContainer {
+  display: flex;
+  gap: 0;
+
+}
+
+#ribbon {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 1.5rem;
+  width: 3.5rem;
+  background-color: white;
+  position: relative;
+  left: -1.5rem;
+  top: -.5rem;
+  font-size: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#triangle {
+  position: relative;
+  left: -1.5rem;
+  top: -.5rem;
+  margin: 0;
+  padding: 0;
+  height: 0.75rem;
+  width: 0.75rem;
+  background: linear-gradient(45deg, white 50%, #abe5f7 0%);
+}
+
+#triangle:first-of-type {
+  background: linear-gradient(135deg, white 50%, #abe5f7 0%);
+}
+
+#triangle:last-of-type {
+  position: relative;
+  left: -5.25rem;
+  height: .5rem;
+  background: linear-gradient(45deg, #e3fffb 60%, #229c86 0%);
+}
+
+.sample {
+  margin-top: -2.3rem;
+}
+
 .button {
   color: rgba(0, 0, 0, .5);
   font-size: 6rem;
