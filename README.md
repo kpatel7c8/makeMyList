@@ -1,6 +1,8 @@
 # makeMyList
 Movies Watchlist
 
+See it in action: https://kpatel7c8.github.io/makeMyList/
+
 Scope: 
 To make a library application where user can add their favorite movies, shows, or books. I have used CSS grid to neatly display each title.
 
