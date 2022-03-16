@@ -2,7 +2,7 @@
 
 ## Link: https://kpatel7c8.github.io/makeMyList/
 
-Movies Watchlist
+## Movies Watchlist
 
 
 
