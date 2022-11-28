@@ -1,6 +1,6 @@
 # makeMyList
 
-## Link: https://kpatel7c8.github.io/makeMyList/
+## Link: https://lil-white-shadow.github.io/makeMyList/
 
 ## About
 
