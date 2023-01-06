@@ -26,6 +26,3 @@ While, there is a bunch of CSS to make it look neat, the heart of this app is JS
 - Once card was added, the next challenge was to get user input. While a modal window is an obvious solution for many reasons, I opted to use the card itself as a form. Since there are only 3 input fields, it looks much more nicer this way.
 - There is basic validation built in the "form" but I spent more time in CSS to style when showing the validation error.
 - Once user input is taken, it is validated and stored in an object from where it is displayed upon hitting the submit button. DOM elements are added and removed by JavaScript since the form needs to be "erased" before displaying the finished card in the same space after submitting.
-
-Last bits:
-In the end, I wanted to store the array in localstorage and retrieve the cards when starting new browser session but I ran into some issues. I was able to "set" the cards created in to the localstorage but "getting" didnt quite work as intended. I believe this is due to the way the createCardForm() is written and after spending some time, I decided to move on and may be come back later...
